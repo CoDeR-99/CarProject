@@ -80,7 +80,12 @@ padding-bottom: 30px;
  background-color: #222; 
 border-top: 0; 
 }
-
+.img{
+width=90%;
+height=60%;
+text-align=center;
+border= 2px solid black;
+}
 
 
 
