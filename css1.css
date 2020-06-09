@@ -12,7 +12,7 @@ background-color: #f6b319;
 border-radius: 0; border: 0; 
 } 
 #logo-img { 
-background: url('One.jpg ') no-repeat; 
+background: url("One.jpg") no-repeat; 
 width: 150px; height: 150px; 
 margin: 10px 15px 10px 0; 
 } 
@@ -96,7 +96,7 @@ line-height: 1.8;
 } 
  @media (min-width: 992px) and (max-width: 1199px) {
  #logo-img { 
-background: url('One.jpg') no-repeat; 
+background: url("One.jpg") no-repeat; 
 width: 100px; 
 height: 100px; 
 margin: 5px 5px 5px 0; 
