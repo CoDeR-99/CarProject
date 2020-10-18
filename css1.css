@@ -5,15 +5,15 @@ background-color: #61122f;
 font-family: 'Oxygen', sans-serif;
  }
 .form {
- width:100px;
  font-color:yellow;
  font-size:30px;
  margin:150px;
  padding:20px;
- border:solid 2px green;
+ border:solid 5px green;
  border-radius:20px;
 }
 .button {
+ width:20px;
 background:#aaff00;
 font-size:20px;
 }
