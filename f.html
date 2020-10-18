@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en"> 
 <head>
  <meta charset="utf-8"> 
@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css1.css">
 <link rel="stylesheet" href="css2.css">
 </head> 
-<body  ng-app="online-shop" ng-strict-di>
+<body ng-app="online-shop" ng-strict-di>
  <header> 
 <nav id="header-nav" class="navbar navbar-default"> 
 <div class="container"> <div class="navbar-header"> 
@@ -51,50 +51,67 @@
 <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
 
 <div style="text-align:center; border:3px solid black; margin: 10px 10px 10px 10px;"><center>
-<form name="myform" action="#" method="post">
+<form name="myform" action=" # " method="post">
 first name: <br><input style="color:black;" type="text" name="fname" id="fname"><br><br>
 last name:<br> <input style="color:black;" type="text" name="lname" id="lname"><br><br>
 car company name: <br><input style="color:black;" type="text" name="cname" id="cname"><br><br>
-email: <br><input style="color:black;" type="email" name="email" id="email"><br><br>
+email: <br><input style="color:black;" type="text" name="email" id="email"><br><br>
 mobile no.: <br><input style="color:black;" type="number" name="mnum" id="mnum"><br><br>
 <button style="color:black;" type="button" onclick="run()">submit</button>
 </form></center></div>
-<?php
+<script>
 function run(){
-$x=$_REQUEST['fname'];
-$y=$_REQUEST['lname'];
-$z=$_REQUEST['cname'];
-$a=$_REQUEST['email'];
-$b=$_REQUEST['mnum'];
-if(empty($x))
-{
- echo "Please enter your first name!!!";
+var x=document.getElementById('fname').value;
+var y=document.getElementById('lname').value;
+var z=document.getElementById('cname').value;
+
+var a=document.getElementById('email').value;
+var atpos= a.indexOf("@");
+var dotpos= a.lastIndexOf(".");
+
+var b=document.getElementById('mnum').value;
+
+if(x==""){
+alert("first name required");
+return false;
 }
-else if(empty($y))
-{
- echo "Please enter your last name!!!";
+else if(y==""){
+alert("last name required");
+return false;
 }
-else if(empty($z))
-{
- echo "Please enter your car company name!!!";
+else if(z==""){
+alert("car company name required");
+return false;
 }
-else if(empty($a))
-{
- echo "Please enter email address!!!";
+else if(a==""){
+alert("email required");
+return false;
 }
-else if(empty($b))
-{
- echo "Please enter your contact number!!!";
+else if((atpos<1) || (dotpos<atpos+2) || (dotpos+2>=a.length)) {
+alert("Not a valid e-mail address");
+return false;
+ }
+else if(b==""){
+alert("phone number required");
+return false;
 }
-else 
-{
- mail("dhirendraa5209@gmail.com", "Summer Internship Project", $y, "From:$x <$a>");
- echo "<script type="text/javascript"> alert("Your request received Successfull!!");
- window.history.log(-1);
- </script>";
+
+else if(b.length!= 10){
+alert("mobile no. must be 10 digits.");
+return false;
+}
+
+else {
+document.write("submitted succesfully! We will call you.");
+
 }
 }
-?>
+</script>
+
+
+
+
+
 
 <footer class="panel-footer"> 
 <div class="container"> 
@@ -116,3 +133,4 @@ else
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
+
