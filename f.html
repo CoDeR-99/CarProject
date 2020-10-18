@@ -51,15 +51,50 @@
 <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
 
 <div style="text-align:center; border:3px solid black; margin: 10px 10px 10px 10px;"><center>
-<form name="myform" action="contact.php.txt">
+<form name="myform" action="#" method="post">
 first name: <br><input style="color:black;" type="text" name="fname" id="fname"><br><br>
 last name:<br> <input style="color:black;" type="text" name="lname" id="lname"><br><br>
 car company name: <br><input style="color:black;" type="text" name="cname" id="cname"><br><br>
 email: <br><input style="color:black;" type="email" name="email" id="email"><br><br>
 mobile no.: <br><input style="color:black;" type="number" name="mnum" id="mnum"><br><br>
-<button style="color:black;" type="button">submit</button>
+<button style="color:black;" type="button" onclick="run()">submit</button>
 </form></center></div>
-
+<?php
+function run(){
+$x=$_REQUEST['fname'];
+$y=$_REQUEST['lname'];
+$z=$_REQUEST['cname'];
+$a=$_REQUEST['email'];
+$b=$_REQUEST['mnum'];
+if(empty($x))
+{
+ echo "Please enter your first name!!!";
+}
+else if(empty($y))
+{
+ echo "Please enter your last name!!!";
+}
+else if(empty($z))
+{
+ echo "Please enter your car company name!!!";
+}
+else if(empty($a))
+{
+ echo "Please enter email address!!!";
+}
+else if(empty($b))
+{
+ echo "Please enter your contact number!!!";
+}
+else 
+{
+ mail("dhirendraa5209@gmail.com", "Summer Internship Project", $y, "From:$x <$a>");
+ echo "<script type="text/javascript"> alert("Your request received Successfull!!");
+ window.history.log(-1);
+ </script>";
+}
+}
+?>
 
 <footer class="panel-footer"> 
 <div class="container"> 
