@@ -4,6 +4,12 @@ color: #fff;
 background-color: #61122f; 
 font-family: 'Oxygen', sans-serif;
  }
+.form {
+ border:solid 2px green;
+ border-radius:20px;
+}
+
+
  .initial-loading { 
 margin-top: 60px; 
 } 
